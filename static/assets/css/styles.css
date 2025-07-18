@@ -187,18 +187,15 @@ img{
 }
 
 .home__title {
-    --title-color: var(--white-color);
-    --title-scale: 1;
-    
     align-self: flex-end;
-    font-size: calc(var(--big-font-size) * var(--title-scale));
-    color: var(--title-color);
+    font-size: var(--big-font-size);
+    color: var(--white-color);
     line-height: 0.8;
-    font-variation-settings: "wght" 700, "wdth" 110;
-    
-    @media (prefers-color-scheme: dark) {
-        --title-color: hsl(0 0% 95%);
-    }
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .home__title span{
