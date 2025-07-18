@@ -13,10 +13,10 @@ A customizable and easy-to-use admin panel built with Python for managing your p
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Python, Django *(or Flask if you're using it)*
-- **Database**: SQLite / MySQL
+- **Backend**: Python, Django
+- **Database**: SQLite
 - **Frontend**: HTML, CSS (Bootstrap)
-- **Deployment**: GitHub, Render, Vercel, etc.
+- **Deployment**: GitHub
 
 ## 🧑‍💻 Getting Started
 
