@@ -42,7 +42,6 @@ python manage.py createsuperuser  # Create your admin account
 python manage.py runserver
 
 Now go to: http://127.0.0.1:8000/admin to log in and manage your portfolio.
-📸 Screenshots
 
 (You can add screenshots here for better visual presentation.)
 📦 Folder Structure
