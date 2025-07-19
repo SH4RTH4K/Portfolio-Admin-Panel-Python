@@ -46,7 +46,7 @@ Now go to: http://127.0.0.1:8000/admin to log in and manage your portfolio.
 portfolio_admin_panel_python/
 │
 ├── portfolio/             # Main app
-├── media/             # Image
+├── media/                 # Image
 ├── static/                # Static assets (CSS/JS)
 ├── templates/             # HTML templates
 ├── db.sqlite3             # Default DB (can be changed)
