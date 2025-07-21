@@ -174,7 +174,6 @@
             <input type="submit" value="Send" class="contact__button">
         </form>
 
-        <!-- Add messages block with scrolling -->
         {% if messages %}
             <div class="messages">
                 {% for message in messages %}
@@ -182,11 +181,21 @@
                 {% endfor %}
             </div>
             <script>
+                // Scroll to contact section
                 document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+
+                // Auto-hide messages after 5 seconds
+                setTimeout(function() {
+                    const messagesDiv = document.querySelector('.messages');
+                    if (messagesDiv) {
+                        messagesDiv.style.display = 'none';
+                    }
+                }, 5000); // 5000ms = 5 seconds
             </script>
         {% endif %}
     </div>
 </section>
+
     </main>
 
     <!--===== FOOTER =====-->
@@ -206,10 +215,11 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
+<!-- Add FingerprintJS -->
+<script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
 <script>
     FingerprintJS.load().then(fp => {
         fp.get().then(result => {
-            // Send fingerprint to server via hidden form field or AJAX
             document.getElementById('fingerprint').value = result.visitorId;
         });
     });
