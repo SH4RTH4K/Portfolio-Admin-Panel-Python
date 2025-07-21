@@ -57,3 +57,16 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return f'Portfolio ({self.id})'
+
+from django.db import models
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False)
+    email = models.EmailField(null=False, blank=False)
+    message = models.TextField(null=False, blank=False)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    fingerprint = models.CharField(max_length=255, null=True, blank=True)  # Optional
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
