@@ -19,9 +19,16 @@ def contact(request):
         email = request.POST.get('email')
         message = request.POST.get('message')
         fingerprint = request.POST.get('fingerprint')
-        if request.META.get('HTTP_X_FORWARDED_FOR'):
-            ip_address = request.META.get('HTTP_X_FORWARDED_FOR').split(',')[0].strip()
 
+        # Get IP address
+        ip_address = None  # Default to None
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip_address = x_forwarded_for.split(',')[0].strip()
+        else:
+            ip_address = request.META.get('REMOTE_ADDR', None)
+
+        # Save to database
         Contact.objects.create(
             name=name,
             email=email,
@@ -30,6 +37,7 @@ def contact(request):
             fingerprint=fingerprint
         )
 
+        # Add success message
         messages.success(request, 'Your message has been sent successfully!')
         return redirect('index')
 
