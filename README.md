@@ -23,8 +23,7 @@ A customizable and easy-to-use admin panel built with Python for managing your p
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/portfolio_admin_panel_python.git
-cd portfolio_admin_panel_python
+git clone https://github.com/SH4RTH4K/Portfolio-Admin-Panel-Python.git
 
 2. Create a Virtual Environment
 
@@ -47,7 +46,7 @@ Now go to: http://127.0.0.1:8000/admin to log in and manage your portfolio.
 portfolio_admin_panel_python/
 │
 ├── portfolio/             # Main app
-├── media/             # Image
+├── media/                 # Image
 ├── static/                # Static assets (CSS/JS)
 ├── templates/             # HTML templates
 ├── db.sqlite3             # Default DB (can be changed)
